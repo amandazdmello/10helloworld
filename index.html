@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World Shapes</title>
+    <style>
+        .shape {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            border: 2px solid #333;
+            border-top: 5px solid #333;
+        }
+
+        .circle {
+            background-color: lightblue;
+            border-radius: 50%;
+        }
+
+        .square {
+            background-color: lightgreen;
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 87px solid yellow;
+        }
+
+        .star {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 87px solid red;
+            position: relative;
+            top: -50px;
+        }
+
+        .heart {
+            width: 100px;
+            height: 90px;
+            background-color: pink;
+            position: relative;
+            transform: rotate(-45deg);
+            margin-top: 5px;
+        }
+
+        .hexagon {
+            width: 100px;
+            height: 55px;
+            background-color: purple;
+            position: relative;
+            margin-top: 22.5px;
+        }
+
+        .oval {
+            width: 120px;
+            height: 60px;
+            background-color: orange;
+            border-radius: 50%;
+        }
+
+        .pentagon {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 87px solid green;
+            position: relative;
+            top: -45px;
+        }
+
+        .rhombus {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            transform: rotate(45deg);
+        }
+        
+        #shapes-container {
+            margin-top: 50px; 
+        }
+    </style>
+</head>
+<body>
+    <div id="shapes-container"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const shapesContainer = document.getElementById('shapes-container');
+            const text = 'Hello World';
+
+            function addShape(text, style) {
+                const shape = document.createElement('div');
+                shape.classList.add('shape');
+                shape.textContent = text;
+                style(shape);
+                shapesContainer.appendChild(shape);
+            }
+
+            addShape(text, function(style) {
+                style.style.backgroundColor = 'lightblue';
+                style.style.borderRadius = '50%';
+            });
+
+            addShape(text, function(style) {
+                style.classList.add('circle');
+            });
+
+            addShape(text, function(style) {
+                style.style.width = '0';
+                style.style.height = '0';
+                style.style.borderLeft = '50px solid transparent';
+                style.style.borderRight = '50px solid transparent';
+                style.style.borderBottom = '87px solid yellow';
+            });
+
+            addShape(text, function(style) {
+                style.style.width = '0';
+                style.style.height = '0';
+                style.style.borderLeft = '50px solid transparent';
+                style.style.borderRight = '50px solid transparent';
+                style.style.borderBottom = '87px solid red';
+                style.style.position = 'relative';
+                style.style.top = '-50px';
+            });
+
+            addShape(text, function(style) {
+                style.style.width = '100px';
+                style.style.height = '90px';
+                style.style.background = 'pink';
+                style.style.position = 'relative';
+                style.style.transform = 'rotate(-45deg)';
+                style.style.marginTop = '5px';
+            });
+
+            addShape(text, function(style) {
+                style.style.width = '100px';
+                style.style.height = '55px';
+                style.style.background = 'purple';
+                style.style.position = 'relative';
+                style.style.marginTop = '22.5px';
+            });
+
+            addShape(text, function(style) {
+                style.style.width = '120px';
+                style.style.height = '60px';
+                style.style.background = 'orange';
+                style.style.borderRadius = '50%';
+            });
+
+            addShape(text, function(style) {
+                style.style.width = '0';
+                style.style.height = '0';
+                style.style.borderLeft = '50px solid transparent';
+                style.style.borderRight = '50px solid transparent';
+                style.style.borderBottom = '87px solid green';
+                style.style.position = 'relative';
+                style.style.top = '-45px';
+            });
+
+            addShape(text, function(style) {
+                style.style.width = '100px';
+                style.style.height = '100px';
+                style.style.background = 'lightcoral';
+                style.style.transform = 'rotate(45deg)';
+            });
+
+        
+
+        });
+    </script>
+</body>
+</html>
